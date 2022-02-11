@@ -1,24 +1,31 @@
 <html lang="en">
 <head>
+    <div class="wrapper">
+    <div class="container">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nnamdi Ede Lab 1: Intro to HTML</title>
+    <title>Nnamdi Ede Lab 2: CSS Selectors</title>
+    <link rel="stylesheet" href="styles.css"
 </head>
+
+
 <body>
-<H1>
-    Nnamdi Ede Lab 1: Intro to HTML
+<H1 class="header">
+    Nnamdi Ede Lab 2: CSS Selectors
 </H1>  
+<nav>
+    <a href="selectors.html">Selectors</a>
+    <a href="index.html">Main page</a>
+</nav>
 
-
- 
 <h2>
     First, the basics.
 </h2>
 
  
     <p>You need the following to build your website.</p>
-
+      <div class="section_1">
     <ul>
       <li>HTML and CSS</li>
       <li>Javascript</li>
@@ -26,49 +33,53 @@
      </ul>
     
     
-    <p>You should list your top 5 albums below.</p>
+    <p>You list your top 3 goals for this class below.</p>
+      
     
     <ol>
-        <li>Coloring Book</li> 
-        <li> Marshall Mathers LP2</li>
-        <li>Born Sinner</li>
-        <li>To Pimp a Butterfly</li>
-        <li>Offseason</li>
+        <li>Learning Front-end Web Design</li> 
+        <li> Learning another programing language(JS)</li>
+        <li>Working well with others on a collaborative project</li>
     </ol> 
-    
+    </div>
+
+    <div class="section_2">
     <h2>Let's Try Some Inline Elements</h2>
-    
     <p>Sometimes you want to <em>draw attention</em> to something in a line of text.</p>
-    
     <p>Sometimes you want to <strong>strongly emphasize something</strong> in the text.</p>
-    
     <p>Sometimes you want to <em><strong>do both.</strong></em></p>
+    </div>
     
+   <div class="section_3">
    <h2>Empty Elements</h2> 
-    
    <p> Soft line breaks can't wrap anything.<br/> 
     Neither can image tags, or hard lines.<br/>
     Add a hard line under here, and break the previous two lines using a soft line break.</p>
-    
-    <hr/>
+   </div>
 
+    <hr>
+     
+    <div class="section_4">
+    <div class="text">
     <h2>Images </h2>
    
     <p>Include the four images from the links and images tutorial below</p>
+    <br>
 
     <p>Don't forget to use alt text on your images. It's important for accessibility.</p>
-
+    </div>
+    <div class="grid">
     <img alt="mochi bubble"src='images/mochi.jpg'/>
     <img alt= "mochi image" src='images/mochi.png'/>
     <img alt= "mochi small" src='images/mochi.svg'/>
     <img alt="mochi gif" src='images/mochi.gif'/>
-
-
-    <hr/>
-    
-     <a href='https://github.com/NnamdiEde/INST377-Lab-Work'>Include a hyperlink here to your github repository for class.</a>.</p>
-
-    <p>If you want your repo to be private, be sure to invite Prof A as a "collaborator."</p>
+    </div>
+    </div>
+    </div>
+  <div class="footer">
+  <hr>
+<a href='https://github.com/NnamdiEde/INST377-Lab-Work'>Include a hyperlink here to your github repository for class.</a>.</p>
+<p>If you want your repo to be private, be sure to invite Prof A as a "collaborator."</p>
      
 </body>
 </html>
