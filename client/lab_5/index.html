@@ -1,44 +1,84 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8'/>
-    <title>Nnamdi Lab 5</title>
-    <link rel='stylesheet' href='styles.css'/>
-  </head>
-  <body>
-    <header class='speaker-form-header'>
-      <h1>Nnamdi's Lab 5</h1>
-    </header>
-    <form action='' method='get' class='speaker-form'>
-      <div class='form-row'>
-        <label for='full-name'>Name</label>
-        <input id='full-name' name='full-name' type='text'/>
-      </div>
-      <div class='form-row'>
-        <label for='email'>Food Preferences</label>
-        <input id='email' name='food preferences'  type='food prefrences'
-      </div>
-      <fieldset class='legacy-form-row'>
-  <legend>Vegan or Veggie ? </legend>
-  <input id='talk-type-1'
-         name='talk-type'
-         type='radio'
-         value='Yes' />
-  <label for='talk-type-1' class='radio-label'>Yes</label>
-  <input id='talk-type-2'
-         name='talk-type'
-         type='radio'
-         value='No'
-         checked />
-  <label for='talk-type-2' class='radio-label'>No</label>
-</fieldset>
-<div class='form-row'>
-  <button>Submit</button>
-</div>
-    </form>
-    <div class='form-row2'>
-      <p><em> This is going to be something in two weeks</em></p>
+<html lang= "en">
+<head>
+     <meta charset= "UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width", initial-scale=1.0>
+     <title>Nnamdi's Lab 5</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+     <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+   <div class="wrapper">
+     <div class="box has-background-warning Title is-1">Nnamdi's Lab 5</div>
+       <div class="container">
+          <div class="columns">
+              <div class="page_item">
+                <form  class="main_form" >
+                    <div class="form_item mt-3">
+                      <label for="fname "></label>First Name</label>
+                      <input type="text" name="fname" id="fname">
+                    </div>
+                   <div class="form_item mt-4">
+                      <label for="pref"></label>Food Preference</label>
+                      <input type="text" name="pref" id="pref">
+                    </div>
+                    <fieldset class='legacy-form-row mt-5'>
+                      <legend>Vegan or Veggie ? </legend>
+                      <input id='talk-type-1' name='talk-type' type='radio' value='Yes' />
+                      <label for='talk-type-1' class='radio-label'>Yes</label>
+                      <input id='talk-type-2' name='talk-type' type='radio' value='No' checked />
+                      <label for='talk-type-2' class='radio-label'>No</label>
+                  </fieldset>
+                    <div class="form_item">
+                    <button class= "button is-primary"  type="submit">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <div class="box">
+                   This is going to be something in a two weeks.
+              </div>
+          </div>
     </div>
-    <script src="script.js "></script>
-  </body>
+   </div>
+   <script src="./script.js"></script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
