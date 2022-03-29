@@ -31,7 +31,7 @@ function createhtmlList(collection) {
   collection.forEach((item) => {
     const { name } = item;
     const displayName = name.toLowerCase();
-    const injectThisItem = `<li>${displayName}</li>`;
+    const injectThisItem = `<li>${displayName}  </li>`;
     targetList.innerHTML += injectThisItem;
   });
 }
@@ -70,7 +70,7 @@ async function mainEvent() {
 
         selectResto = currentArray.filter((item) =>
           item.zip.includes(event.target.value)
-          && item.name.includes(resto.value.toLowerCase()))
+          && item.name.toLowerCase().includes(resto.value.toLowerCase()))
       }
       else {
         console.log("else", resto.value)
@@ -83,22 +83,34 @@ async function mainEvent() {
       // console.log(selectResto);
       createhtmlList(selectResto);
     });
+
     resto.addEventListener('input', async (event) => {
       console.log(event.target.value);
 
       if (currentArray.length < 1) {// the actual  error current array is empty
         return;
       }
-      const selectResto = currentArray.filter((item) => {
-        const lowerName = item.name.toLowerCase();
-        const lowerValue = event.target.value.toLowerCase();
-        return lowerName.includes(lowerValue);
-      });
+      let selectResto = []
+      if (zipcode.value) {
+        console.log("if", zipcode.value)
 
-      console.log(selectResto);
+        selectResto = currentArray.filter((item) =>
+          item.zip.includes(zipcode.value)
+          && item.name.toLowerCase().includes(event.target.value.toLowerCase()))
+      }
+      else {
+        console.log("else", zipcode.value)
+        selectResto = currentArray.filter((item) =>
+          item.name.toLowerCase().includes(event.target.value)
+        );
+      }
+
+      //  currentArray.forEach((item)=> console.log(item.zip))
+      // console.log(selectResto);
       createhtmlList(selectResto);
     });
 
+   
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
       // console.log('form submission');
