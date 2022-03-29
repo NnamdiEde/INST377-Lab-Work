@@ -58,13 +58,38 @@ async function mainEvent() {
 
 
     let currentArray = [];
+    zipcode.addEventListener('input', async (event) => {
+      console.log(event.target.value);
+
+      if (currentArray.length < 1) {// the actual  error current array is empty
+        return;
+      }
+      let selectResto = []
+      if (resto.value) {
+        console.log("if", resto.value)
+
+        selectResto = currentArray.filter((item) =>
+          item.zip.includes(event.target.value)
+          && item.name.includes(resto.value.toLowerCase()))
+      }
+      else {
+        console.log("else", resto.value)
+        selectResto = currentArray.filter((item) =>
+          item.zip.includes(event.target.value)
+        );
+      }
+
+      //  currentArray.forEach((item)=> console.log(item.zip))
+      // console.log(selectResto);
+      createhtmlList(selectResto);
+    });
     resto.addEventListener('input', async (event) => {
       console.log(event.target.value);
 
       if (currentArray.length < 1) {// the actual  error current array is empty
         return;
       }
-      const selectResto = arrayFromJson.data.filter((item) => {
+      const selectResto = currentArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
@@ -84,6 +109,8 @@ async function mainEvent() {
       createhtmlList(currentArray);
     });
   }
+
+
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
