@@ -1,0 +1,89 @@
+<html lang= "en">
+<head>
+     <meta charset= "UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width", initial-scale=1.0>
+     <title>Nnamdi's Lab 8</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+     <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+   <div class="wrapper">
+     <div class="box has-background-warning Title is-1">Nnamdi's Lab 8</div>
+       <div class="container">
+          <div class="columns">
+              <div class="page_item">
+                <form  class="main_form" >
+                    <div class="form_item mt-3">
+                      <label for="resto_name"></label>Resturaunt Name</label>
+                      <input type="text" name="resto_name" id="resto_name">
+                      <label for="zipcode"></label>ZipCode</label>
+                      <input type="text" name="zipcode" id="zipcode">
+                    </div>
+
+                   
+
+                    <fieldset class='legacy-form-row mt-5'>
+                      <legend>Vegan or Veggie ? </legend>
+                      <input id='talk-type-1' name='talk-type' type='radio' value='Yes' />
+                      <label for='talk-type-1' class='radio-label'>Yes</label>
+                      <input id='talk-type-2' name='talk-type' type='radio' value='No' checked />
+                      <label for='talk-type-2' class='radio-label'>No</label>
+                  </fieldset>
+                    <div class="form_item">
+                    <button class= "button is-primary"  type="submit">Load List</button>
+                  </div>
+                </form>
+              </div>
+              <div class="page_item page_item_wide">
+                <div id="map"></div>
+                  <h2>Resturaunt List</h2>
+                   <ul class ="resto-list"></ul>
+              </div>
+          </div>
+    </div>
+   </div>
+   <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
