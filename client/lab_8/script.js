@@ -36,32 +36,32 @@ function createhtmlList(collection) {
   });
 }
 
-function initMap(targetId) {
+function initMap() {
   // TODO const latlog = [38.784,-76.872]; should be PG county is Xinjang
-  const map = L.map(targetId).setview(latLong,13);
+  const map = L.map('mymap').setView([38.7849, -76.8721], 10);
   L.tileLayer(
-    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    acessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-  }).addTo(map);
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1Ijoibm5hbWRpZSIsImEiOiJjbDF1dmhoczcydzhmM2pqeGxlaXN6cTliIn0.5N2nFccAq6VFxhvSv5wEVQ'
+    }).addTo(map);
   return map;
 }
 
- function addMapMarkers(map, collection) {
-  map.eachLayer((layer)=> {
-    if (layer instanceof L.marker){
+function addMapMarkers(map, collection) {
+  map.eachLayer((layer) => {
+    if (layer instanceof L.marker) {
 
       layer.remove();
     }
   });
 
-  collection.foreach(item=> {
-    const point= item.geocoded_column_1?.coordinates;
+  collection.foreach(item => {
+    const point = item.geocoded_column_1?.coordinates;
     console.log(item.geocoded_column_1?.coordinates);
     L.marker([point[1], point[0]]).addTo(map);
   })
@@ -75,28 +75,29 @@ async function mainEvent() {
   const resto = document.querySelector('#resto_name');
   const zipcode = document.querySelector('#zipcode');
   const map = initMap('map');
-  const retrievalVar = 'restauraunts'
+  const retrievalVar = 'restauraunts';
   submit.style.display = 'none';
-   
-  if(localStorage.getItem(retrievalVar) === undefined) {
-  const results = await fetch('/api/foodServicesPG');
+
+  if (localStorage.getItem(retrievalVar) !== undefined) {
+    const results = await fetch('/api/foodServicesPG');
     const arrayFromJson = await results.json();
-   console.log(arrayFromJson);
-   localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
+    console.log(arrayFromJson);
+    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
   }
 
-   const storedDataString = localstorage.getitem(retrievalVar);
-   const storedDataArray = JSON.parse(storedDataString);
-   console.log(storedDataArray);
-   
-if (storedDataArray.length> 0) {
-  submit.style.display ='block';
-  
-   let currentArray= [];
-  resto.addEventListener('input', async (event)=> {
-    console.log(event.target.value);
-  
-  
+  const storedDataString = localStorage.getItem(retrievalVar);
+  console.log(storedDataString);
+  const storedDataArray = JSON.parse(storedDataString);
+  console.log(storedDataArray);
+
+  if (storedDataArray.length > 0) {
+    submit.style.display = 'block';
+
+    let currentArray = [];
+    resto.addEventListener('input', async (event) => {
+      console.log(event.target.value);
+
+
 
 
 

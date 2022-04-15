@@ -17,7 +17,7 @@
     background-color: darkslategray;
   }
 
-  #map { height: 360px; }
+  #mymap { height: 360px; }
   
   /* Page Layout */
   .columns {
